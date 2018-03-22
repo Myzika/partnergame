@@ -1,26 +1,19 @@
-/*global Phaser*/
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+    ctx.drawImage(document.getElementById("backgroundone"), 0, 0);
+    ctx.drawImage(document.getElementById("onedoor"), 420, 232);
+    ctx.drawImage(document.getElementById("onejacket"), 987, 124);
 
-var game = new Phaser.Game(screen.availWidth, screen.availHeight, Phaser.AUTO, '');
-var game_state = {};
 
-game_state.main = function() {};
-game_state.main = {
-
-    preload: function() {
-        game.stage.backgroundColor = '#333333';
-    },
-
-    create: function() {
-       var test = game.add.text(32, 32, "testing", {
-           font: 'bold 30px monospace',
-           fill: '#ffffff'
-       });
-    },
-
-    update: function() {
-
-    },
-
+const test = document.getElementById('test');
+ctx.drawImage(test, 30, 30);
+canvas.onmousedown = function testingFunction(event) {
+    alert();
+    let cx = event.pageX
+    let cy = event.pageY
+    if (cx < 420 && cx > 232 && cy < 232 && cy > 940) {
+    alert();
+}
 };
-game.state.add('main', game_state.main);
-game.state.start('main');
+
+

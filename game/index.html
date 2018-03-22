@@ -1,17 +1,39 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-	<meta charset="UTF-8" />
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
     <title>Partner Game</title>
     <style type="text/css">
-        body {
+        canvas {
             margin: 0;
+            font-family: "VT323";
+            background-color: #333333;
+        }
+
+        #hidden {
+            color: #333333;
+        }
+
+        .text {
+            color: white;
         }
     </style>
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
+
 </head>
-<body>
+
+<body id="parent">
+    <div style="display:none">
+        <img src="assets/onebackground.png" id="backgroundone"/>
+        <img src="assets/onedoor.png" id="onedoor"/>
+        <img src="assets/onejacket.png" id="onejacket"/>
+    </div>
+    <canvas height="1344" width="1344" id="myCanvas"></canvas>
+    
     <script type="text/javascript" src="testing.js"></script>
+
 </body>
+
 </html>
