@@ -9,8 +9,8 @@ const test = document.getElementById('test');
 ctx.drawImage(test, 30, 30);
 canvas.onmousedown = function testingFunction(event) {
     alert();
-    let cx = event.pageX
-    let cy = event.pageY
+    let cx = event.pageX;
+    let cy = event.pageY;
     if (cx < 420 && cx > 232 && cy < 232 && cy > 940) {
     alert();
 }
