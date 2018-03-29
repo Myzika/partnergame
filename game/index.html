@@ -7,16 +7,8 @@
     <style type="text/css">
         canvas {
             margin: 0;
-            font-family: "VT323";
-            background-color: #333333;
-        }
-
-        #hidden {
-            color: #333333;
-        }
-
-        .text {
-            color: white;
+            font-family: "VT323", monospace;
+            background-color: rgb(43, 43, 43);
         }
     </style>
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
@@ -25,10 +17,13 @@
 </head>
 
 <body id="parent">
-    <div style="display:none">
+<div style="display:none" id="images">
         <img src="assets/onebackground.png" id="backgroundone"/>
         <img src="assets/onedoor.png" id="onedoor"/>
         <img src="assets/onejacket.png" id="onejacket"/>
+    <img src="assets/onedoorknob.png" id="onedoorknob"/>
+    <img src="assets/onebroom.png" id="onebroom">
+    <img src="assets/onetextbox.png" id="onetextbox">
     </div>
     <canvas height="1344" width="1344" id="myCanvas"></canvas>
     
