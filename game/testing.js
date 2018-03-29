@@ -51,11 +51,5 @@ canvas.onmousedown = function testingFunction(event) {
         ctx.textAlign = "center";
         ctx.fillText("Seems like the doorknob is missing.", 672, 1100);
     }
-
-    let cx = event.pageX;
-    let cy = event.pageY;
-    if (cx < 420 && cx > 232 && cy < 232 && cy > 940) {
-        alert();
-    }
 };
 
