@@ -1,6 +1,4 @@
 var images = document.getElementById("images");
-images.addEventListener("load", game());
-
 function game() {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
