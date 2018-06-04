@@ -8,7 +8,8 @@ function game() {
     let keycard = false;
 
     // levelOne();
-    levelTwo();
+    //levelTwo();
+    levelThree();
 
     function levelOne() {
         /**
@@ -95,7 +96,7 @@ function game() {
                     ctx.fillText("Seems like the doorknob is missing.", 672, 1100);
                 }
             }
-            else if (x > 966 && decision == true) {
+            else if (x > 966 && decision === true) {
                 if (y > 945) {
                     if (y < 1134) {
                         ctx.clearRect(70, 966, 1211, 336);
@@ -195,7 +196,7 @@ function game() {
                 }
 
             }
-        };
+        }
 
         function door() {
             if (flashlight === true) {
@@ -248,6 +249,10 @@ function game() {
     }
 
     function levelThree() {
-
+        ctx.drawImage(document.getElementById("threeBackground"), 0, 0);
+        ctx.drawImage(document.getElementById("rightDoorFar"), 990, 525);
+        ctx.drawImage(document.getElementById("midDoorFar"), 607, 504);
+        ctx.drawImage(document.getElementById("leftDoorFar"), 147, 510);
+        ctx.drawImage(document.getElementById("light"), 380, 0)
     }
 }
