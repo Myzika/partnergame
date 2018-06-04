@@ -8,9 +8,9 @@ function game() {
     let keycardTwo = false;
     let goIn = false;
 
-    levelOne();
+    // levelOne();
     // levelTwo();
-    // levelThree();
+    levelThree();
 
     function levelOne() {
         /**
@@ -162,9 +162,9 @@ function game() {
                 ctx.font = "60px VT323";
                 ctx.fillStyle = "white";
                 ctx.textAlign = "center";
-                ctx.fillText("it's a window", 672, 1100);
-                ctx.fillText("what did you", 672, 1170);
-                ctx.fillText("really expect.", 672, 1240);
+                ctx.fillText("You look out the windows and watch the stars go", 672, 1100);
+                ctx.fillText("by. That tells you the ship is still moving. While", 672, 1170);
+                ctx.fillText("it's quiet,there must be someone else aboard.", 672, 1240);
             }
             else if (data[0] === 82) { //door
                 door();
@@ -280,13 +280,14 @@ function game() {
 
             }
             else if (data[0] === 28) {
-                ctx.clearRect(70, 966, 1211, 336);
-                ctx.font = "60px VT323";
-                ctx.fillStyle = "white";
-                ctx.textAlign = "center";
-                ctx.fillText("MIDDLE DOOR.", 672, 1100);
-                ctx.fillText("FUCK YEAH IM BETTER THAN", 672, 1170);
-                ctx.fillText("THE MIDDLE CHILD", 672, 1240);
+                // ctx.clearRect(70, 966, 1211, 336);
+                // ctx.font = "60px VT323";
+                // ctx.fillStyle = "white";
+                // ctx.textAlign = "center";
+                // ctx.fillText("MIDDLE DOOR.", 672, 1100);
+                // ctx.fillText("FUCK YEAH IM BETTER THAN", 672, 1170);
+                // ctx.fillText("THE MIDDLE CHILD", 672, 1240);
+                middleDoor();
             }
             else if (data[0] === 93) {
                 ctx.clearRect(70, 966, 1211, 336);
@@ -434,6 +435,47 @@ function game() {
                             levelThree();
                         }
                     }
+                }
+            }
+        }
+
+        function middleDoor() {
+            ctx.drawImage(document.getElementById("midDoorClose"), 0, 0);
+            ctx.drawImage(document.getElementById("midDoor"), 353, 210);
+            ctx.drawImage(document.getElementById("midDoorknob"), 752, 775)
+
+            canvas.onmousedown = function rightDoor(event) {
+                const rect = canvas.getBoundingClientRect(),
+                    x = event.clientX - rect.left,
+                    y = event.clientY - rect.top;
+                let data = ctx.getImageData(x, y, 1, 1).data;
+
+                if (data[0] === 114) {
+                    ctx.clearRect(70, 966, 1211, 336);
+                    ctx.font = "60px VT323";
+                    ctx.fillStyle = "white";
+                    ctx.textAlign = "center";
+                    ctx.fillText("A wooden door. It's not like the", 672, 1100);
+                    ctx.fillText("others on the ship. It adorns a", 672, 1170);
+                    ctx.fillText("golden doorknob. It's locked.", 672, 1240);
+                }
+                else if (data[0] === 168 || data[0] === 125) {
+                    ctx.clearRect(70, 966, 1211, 336);
+                    ctx.font = "60px VT323";
+                    ctx.fillStyle = "white";
+                    ctx.textAlign = "center";
+                    ctx.fillText("The knob doesn't move too much.", 672, 1100);
+                    ctx.fillText("The door doesn't open. Maybe there's a", 672, 1170);
+                    ctx.fillText("key around here somewhere.", 672, 1240);
+                }
+                else if (data[0] === 61) {
+                    ctx.clearRect(70, 966, 1211, 336);
+                    ctx.font = "60px VT323";
+                    ctx.fillStyle = "white";
+                    ctx.textAlign = "center";
+                    ctx.fillText("There's a spot with fresher colours", 672, 1100);
+                    ctx.fillText("and screw holes. Maybe there was a", 672, 1170);
+                    ctx.fillText("plaque or something that used to be here.", 672, 1240);
                 }
             }
         }
