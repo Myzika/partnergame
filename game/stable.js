@@ -8,9 +8,7 @@ function game() {
     let keycardTwo = false;
     let goIn = false;
 
-    // levelOne();
-    // levelTwo();
-    levelThree();
+    levelOne();
 
     function levelOne() {
         /**
@@ -152,10 +150,6 @@ function game() {
                     }, 4000
                 )
             }
-
-            /*
-             * TODO: Remove debug message
-             */
             else if (data[0] === 16) { //windows
                 takeEm = false;
                 ctx.clearRect(70, 966, 1211, 336);
@@ -252,11 +246,6 @@ function game() {
         ctx.drawImage(document.getElementById("light"), 380, 0);
         ctx.drawImage(document.getElementById("leftBlood"), 210, 945);
 
-        //82 door R
-        //127 light
-        //28 middoor
-        //93 leftblood
-
         canvas.onmousedown = function levelThreeGame(event) {
             const rect = canvas.getBoundingClientRect(),
                 x = event.clientX - rect.left,
@@ -280,13 +269,6 @@ function game() {
 
             }
             else if (data[0] === 28) {
-                // ctx.clearRect(70, 966, 1211, 336);
-                // ctx.font = "60px VT323";
-                // ctx.fillStyle = "white";
-                // ctx.textAlign = "center";
-                // ctx.fillText("MIDDLE DOOR.", 672, 1100);
-                // ctx.fillText("FUCK YEAH IM BETTER THAN", 672, 1170);
-                // ctx.fillText("THE MIDDLE CHILD", 672, 1240);
                 middleDoor();
             }
             else if (data[0] === 93) {
@@ -294,9 +276,9 @@ function game() {
                 ctx.font = "60px VT323";
                 ctx.fillStyle = "white";
                 ctx.textAlign = "center";
-                ctx.fillText("MM BLOOD. Sounds tasty.", 672, 1100);
-                ctx.fillText("Full of iron and has a", 672, 1170);
-                ctx.fillText("distinct coppery taste.", 672, 1240);
+                ctx.fillText("What...? More blood...", 672, 1100);
+                ctx.fillText("I'm not sure if I want to", 672, 1170);
+                ctx.fillText("know where it's from.", 672, 1240);
             }
         }
 
@@ -318,9 +300,9 @@ function game() {
                     ctx.font = "60px VT323";
                     ctx.fillStyle = "white";
                     ctx.textAlign = "center";
-                    ctx.fillText("MM MORE BLOOD.", 672, 1100);
-                    ctx.fillText("But this blood is a", 672, 1170);
-                    ctx.fillText("little more crispy.", 672, 1240);
+                    ctx.fillText("It's still fresh...I", 672, 1100);
+                    ctx.fillText("don't know if I wanna", 672, 1170);
+                    ctx.fillText("go in there...", 672, 1240);
                 }
                 else if (data[0] === 114) {
                     ctx.clearRect(70, 966, 1211, 336);
