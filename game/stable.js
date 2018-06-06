@@ -80,7 +80,7 @@ function game() {
                     ctx.fillText("hole, push it in a little bit,", 672, 1170);
                     ctx.fillText("twist it, and the door swings open.", 672, 1240);
                     setTimeout(
-                        levelTwo, 4000
+                        levelTwo, 2500
                     )
                 }
                 else {
@@ -120,7 +120,9 @@ function game() {
         ctx.drawImage(document.getElementById("twobackground"), 0, 0);
         ctx.drawImage(document.getElementById("twowindows"), 0, 50);
         ctx.drawImage(document.getElementById("twolights"), 950, 0);
-        ctx.drawImage(document.getElementById("twoblood"), 483, 630);
+        if (flashlight === false) {
+            ctx.drawImage(document.getElementById("twoblood"), 483, 630);
+        }
         ctx.drawImage(document.getElementById("twofardoor"), 1133, 483);
 
         canvas.onmousedown = function levelTwoGame(event) {
@@ -147,7 +149,7 @@ function game() {
                         ctx.fillText("Take them?", 515, 1100);
                         ctx.drawImage(document.getElementById("yes"), 966, 945);
                         ctx.drawImage(document.getElementById("no"), 966, 1134);
-                    }, 4000
+                    }, 2500
                 )
             }
             else if (data[0] === 16) { //windows
@@ -175,6 +177,14 @@ function game() {
                         ctx.fillText("them down, you put them in your pocket.", 672, 1240);
                         flashlight = true;
                         keycard = true;
+                        ctx.drawImage(document.getElementById("twoblood-2"), 483, 630);
+                        ctx.clearRect(70, 966, 1211, 336);
+                        ctx.font = "60px VT323";
+                        ctx.fillStyle = "white";
+                        ctx.textAlign = "center";
+                        ctx.fillText("You pick up the keycard and you", 672, 1100);
+                        ctx.fillText("pick up the flashlight. After wiping", 672, 1170);
+                        ctx.fillText("them down, you put them in your pocket.", 672, 1240);
                     }
                     else if (y > 1134) {
                         ctx.clearRect(70, 966, 1211, 336);
@@ -204,7 +214,7 @@ function game() {
                             ctx.fillText("into the slot, and push the door gently.", 672, 1170);
                             ctx.fillText("It swings open without hesitation.", 672, 1240);
                             setTimeout(
-                                levelThree, 4000
+                                levelThree, 2500
                             )
                         }
                         else {
@@ -331,7 +341,7 @@ function game() {
                             ctx.fillText("Do you want to go in?", 515, 1130);
                             ctx.drawImage(document.getElementById("yes"), 966, 945);
                             ctx.drawImage(document.getElementById("no"), 966, 1134);
-                        }, 3000
+                        }, 2500
                     )
                 }
 
@@ -352,7 +362,7 @@ function game() {
                                     ctx.fillText("This is where our story ends...", 672, 600);
                                     ctx.fillText("for now, that is. Keep checking", 672, 700);
                                     ctx.fillText("in to see how this story continues.", 672, 800);
-                                }, 4000
+                                }, 2500
                             )
                         }
                         else if (y > 1134) {
@@ -411,7 +421,7 @@ function game() {
                                 ctx.fillText("The door seems to be jammed", 672, 1100);
                                 ctx.fillText("and no matter how hard you push, won't move.", 672, 1170);
                                 ctx.fillText("Click to return to the hallway.", 672, 1240);
-                            }, 3000
+                            }, 2500
                         )
                         canvas.onmousedown = function() {
                             levelThree();
@@ -449,6 +459,14 @@ function game() {
                     ctx.fillText("The knob doesn't move too much.", 672, 1100);
                     ctx.fillText("The door doesn't open. Maybe there's a", 672, 1170);
                     ctx.fillText("key around here somewhere.", 672, 1240);
+                    setTimeout(function() {
+                        ctx.fillText("(This is a WIP and", 672, 1100);
+                        ctx.fillText("this area is incomplete.)", 672, 1170);
+                        ctx.fillText("Click to go back.", 672, 1240);
+                    }, 2500);
+                    canvas.onmousedown = function() {
+                        levelThree();
+                    }
                 }
                 else if (data[0] === 61) {
                     ctx.clearRect(70, 966, 1211, 336);
@@ -459,6 +477,7 @@ function game() {
                     ctx.fillText("and screw holes. Maybe there was a", 672, 1170);
                     ctx.fillText("plaque or something that used to be here.", 672, 1240);
                 }
+
             }
         }
     }
